@@ -22,7 +22,7 @@ class KittensController < ApplicationController
             if @kitten.save
                 format.html { redirect_to kitten_url(@kitten), notice: "Your kitten is immortalized!!" }
             else
-                format.html { render :new, status: :unprocessable_entity, alert: "You suck at creating kittens"}
+                format.html { render :new, status: :unprocessable_entity}
             end
         end
     end
