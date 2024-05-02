@@ -1,8 +1,12 @@
-<% @kittens.each do |kitten|%>
-    <div class="card">
-        <%= kitten.name%>
-        <%= kitten.age%>
-        <%= kitten.cutness%>
-        <%= kitten.softness%>
+<h1>Kitten collection!</h1>
+
+ <div class="cards-container">
+  <div class="cards">
+    <% @kittens.each do |kitten|%>
+    <%= render kitten%>
     </div>
  <%end%>
+  </div>
+</div>
+<br><br>
+<li><%=link_to "Add a kitten!", new_kitten_path, class: "button" %></li>

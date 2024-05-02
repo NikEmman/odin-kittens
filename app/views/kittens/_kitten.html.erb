@@ -1,0 +1,9 @@
+<div class="card">
+    <h4><%=kitten.name%></h4>
+    <p>Age : <%=kitten.age%></p>
+    <p>Cuteness level: <%= kitten.cuteness%></p>
+    <p>Softness level: <%= kitten.softness%></p>
+    <div class="special-actions">
+      <%= render partial: 'links', locals: { kitten: kitten } %>
+    </div>
+</div>

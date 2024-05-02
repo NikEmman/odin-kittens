@@ -1,0 +1,8 @@
+
+<% if controller_name == 'kittens' && action_name == 'index' %>
+<%= link_to 'Show me!', kitten_path(kitten), class: "button btn-small" %>
+    
+<% else %>
+<%= link_to "Edit", edit_kitten_path(kitten), class:"button" %> 
+    <%= button_to "Delete kitten", kitten, class:"delete", method: :delete%>
+<% end %>

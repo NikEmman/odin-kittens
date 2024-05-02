@@ -1,5 +1,5 @@
 class KittensController < ApplicationController
-    before_action :set_event, only: [:show, :edit, :update, :destroy]
+    before_action :set_kitten, only: [:show, :edit, :update, :destroy]
 
     def new
         @kitten = Kitten.new
@@ -16,11 +16,11 @@ class KittensController < ApplicationController
     end
 
     def create
-        @kitten = Kitten.new(params)
+        @kitten = Kitten.new(kitten_params)
         
         respond_to do |format|
-            if @booking.save
-                format.html { redirect_to booking_url(@booking), notice: "Your kitten is immortalized!!" }
+            if @kitten.save
+                format.html { redirect_to kitten_url(@kitten), notice: "Your kitten is immortalized!!" }
             else
                 format.html { render :new, status: :unprocessable_entity, alert: "You suck at creating kittens"}
             end
@@ -29,7 +29,7 @@ class KittensController < ApplicationController
 
     def update
         respond_to do |format|
-          if @kitten.update(params)
+          if @kitten.update(kitten_params)
             format.html { redirect_to kittens_url(@kitten), notice: "Kitten info was updated!." }
           else
             format.html { render :edit, status: :unprocessable_entity }
@@ -47,6 +47,9 @@ class KittensController < ApplicationController
     private
     def set_kitten
      @kitten = Kitten.find(params[:id])
+    end
+    def kitten_params
+      params.require(:kitten).permit(:name,:age,:cuteness,:softness)
     end
 
 end

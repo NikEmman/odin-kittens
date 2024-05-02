@@ -18,6 +18,64 @@ body {
 
 }
 
+header>ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
+
+header {
+    background-color: var(--sidebar-color);
+    display: flex;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+}
+
+h1 {
+    text-align: center;
+    color: var(--sidebar-color);
+}
+
+.notice {
+    background-color: rgb(120, 215, 141);
+    color: green;
+    text-align: center;
+}
+
+.alert {
+    background-color: rgb(221, 132, 140);
+    color: rgb(110, 10, 18);
+    text-align: center;
+}
+
+.container {
+    padding-left: var(--font-large);
+    padding-right: var(--font-large);
+}
+
+.cards-container {
+    grid-area: 1/ 1 / 3 / 2;
+    grid-template-rows: 3% 1fr;
+    display: grid;
+    gap: var(--font-large);
+
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template: repeat(3, max-content)/ repeat(3, 1fr); */
+    gap: var(--font-large);
+
+}
 
 .card {
     padding: var(--font-large);
@@ -25,4 +83,70 @@ body {
     border-radius: 10px;
     border-left: 8px solid var(--border);
     display: grid;
+}
+
+.special-actions {
+    padding-top: var(--font-large);
+    justify-items: end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--font-small);
+}
+
+.button,
+.delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    height: 2rem;
+    padding: 8px;
+    width: 10vw;
+    font-size: var(--font-small);
+    border: none;
+}
+
+.button {
+    background-color: var(--button);
+    color: var(--sidebar-text);
+    text-decoration: none;
+
+
+    &:hover {
+        background-color: var(--sidebar-text);
+        color: var(--button);
+    }
+
+    &:active {
+        transform: translate(0.8rem, 0.3rem);
+    }
+}
+
+.delete {
+    background-color: rgb(204, 104, 104);
+    color: var(--sidebar-text);
+
+    &:hover {
+        background-color: var(--sidebar-text);
+        color: rgb(204, 104, 104);
+    }
+
+    &:active {
+        transform: translate(0.8rem, 0.3rem);
+    }
+}
+
+.btn-small {
+    width: 6vw;
+
+    &:hover {
+        background-color: var(--border);
+        color: var(--button);
+    }
+}
+
+.links {
+    display: flex;
+    padding: var(--font-large);
+    gap: var(--font-medium);
 }
